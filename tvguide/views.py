@@ -22,3 +22,7 @@ class ListCreateChannel(generics.ListCreateAPIView):
 
     def get_queryset(self):
         return self.queryset.filter(tvguide_id=self.kwargs.get('tvguide_pk'))
+
+    def perform_create(self, serializer):
+        tvguide = get_object_or_404(models.TvGuide, pk=self.kwargs.get('tvguide_pk'))
+        serializer.save(tvguide=tvguide)
