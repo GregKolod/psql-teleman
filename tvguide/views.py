@@ -19,3 +19,6 @@ class RetrieveUpdateDestroyTvGuide(generics.RetrieveUpdateDestroyAPIView):
 class ListCreateChannel(generics.ListCreateAPIView):
     queryset = models.Channel.objects.all()
     serializer_class = serializers.ChannelSerializer
+
+    def get_queryset(self):
+        return self.queryset.filter(tvguide_id=self.kwargs.get('tvguide_pk'))
