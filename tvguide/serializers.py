@@ -12,3 +12,20 @@ class ChannelSerializer(serializers.ModelSerializer):
             'daily_channel',
         )
         model = models.Channel
+
+
+class TvGuideSerializer(serializers.ModelSerializer):
+    channels = serializers.StringRelatedField(
+        many=True,
+        read_only=True,
+    )
+
+    class Meta:
+        fields = (
+            'id',
+            'name',
+            'date_at',
+            'created_at',
+            'updated_at',
+        )
+        model = models.TvGuide
