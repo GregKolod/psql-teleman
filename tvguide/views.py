@@ -14,3 +14,8 @@ class ListCreateTvGuide(generics.ListCreateAPIView):
 class RetrieveUpdateDestroyTvGuide(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.TvGuide.objects.all()
     serializer_class = serializers.TvGuideSerializer
+
+
+class ListCreateChannel(generics.ListCreateAPIView):
+    queryset = models.Channel.objects.all()
+    serializer_class = serializers.ChannelSerializer
