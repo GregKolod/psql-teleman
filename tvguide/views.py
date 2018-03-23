@@ -9,3 +9,8 @@ from . import serializers
 class ListCreateTvGuide(generics.ListCreateAPIView):
     queryset = models.TvGuide.objects.all()
     serializer_class = serializers.TvGuideSerializer
+
+
+class RetrieveUpdateDestroyTvGuide(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.TvGuide.objects.all()
+    serializer_class = serializers.TvGuideSerializer
