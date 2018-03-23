@@ -31,3 +31,10 @@ class ListCreateChannel(generics.ListCreateAPIView):
 class RetrieveUpdateDestroyChannel(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Channel.objects.all()
     serializer_class = serializers.ChannelSerializer
+
+    def get_object(self):
+        return get_object_or_404(
+            self.get_queryset(),
+            tvguide_id=self.kwargs.get('tvguide_id'),
+            pk=self.kwargs.get('pk')
+        )
