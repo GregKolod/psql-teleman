@@ -4,7 +4,7 @@ from django.db import models
 
 class TvGuide(models.Model):
     name = models.CharField(max_length=40)
-    date_at = models.DateTimeField
+    # date_at = models.DateTimeField
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -15,7 +15,7 @@ class TvGuide(models.Model):
 class Channel(models.Model):
     tvguide = models.ForeignKey(TvGuide, related_name='channels', on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
-    daily_channel = JSONField()
+    # daily_channel = JSONField()
 
     def __str__(self):
         return self.name
