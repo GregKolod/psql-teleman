@@ -9,7 +9,7 @@ class ChannelSerializer(serializers.ModelSerializer):
             'id',
             'tvguide',
             'name',
-            'daily_channel',
+            # 'daily_channel',
         )
         model = models.Channel
 
@@ -27,5 +27,6 @@ class TvGuideSerializer(serializers.ModelSerializer):
             'date_at',
             'created_at',
             'updated_at',
+            'channels',
         )
         model = models.TvGuide
