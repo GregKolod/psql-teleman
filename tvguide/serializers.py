@@ -9,7 +9,7 @@ class ChannelSerializer(serializers.ModelSerializer):
             'id',
             'tvguide',
             'name',
-            # 'daily_channel',
+            'daily_channel',
         )
         model = models.Channel
 
