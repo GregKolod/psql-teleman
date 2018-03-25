@@ -15,7 +15,8 @@ class TvGuide(models.Model):
 class Channel(models.Model):
     tvguide = models.ForeignKey(TvGuide, related_name='channels', on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
-    daily_channel = JSONField(blank=True, null=True, default=None)
+    quote_page = models.CharField(max_length=255, default='')
+    daily_channel = JSONField(blank=True, null=True, default={})
 
     def __str__(self):
         return self.name
