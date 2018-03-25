@@ -5,10 +5,14 @@ from . import models
 
 class ChannelSerializer(serializers.ModelSerializer):
     class Meta:
+        extra_kwargs = {
+            'daily_channel': {'read_only': True}
+        }
         fields = (
             'id',
             'tvguide',
             'name',
+            'quote_page',
             'daily_channel',
         )
         model = models.Channel
