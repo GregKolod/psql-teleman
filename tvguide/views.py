@@ -35,6 +35,6 @@ class RetrieveUpdateDestroyChannel(generics.RetrieveUpdateDestroyAPIView):
     def get_object(self):
         return get_object_or_404(
             self.get_queryset(),
-            tvguide_id=self.kwargs.get('tvguide_id'),
+            tvguide_id=self.kwargs.get('tvguide_pk'),
             pk=self.kwargs.get('pk')
         )
